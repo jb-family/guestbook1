@@ -42,7 +42,6 @@ List<GuestBookVo> guestBookList = guestBookDao.guestBookList();
 	
 	<% for(int i = 0; i < guestBookList.size(); i++ ) { %>
 		<table border="1">
-			
 				<tr>
 					<td style="width:30px;"><%= guestBookList.get(i).getNo() %></td>
 					<td style="width:100px;"><%= guestBookList.get(i).getName() %></td>

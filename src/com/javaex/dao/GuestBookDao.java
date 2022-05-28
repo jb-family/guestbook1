@@ -220,6 +220,7 @@ public class GuestBookDao {
 		query += "         ,content ";
 		query += "         ,reg_date ";
 		query += " from    guestbook ";
+		query += " where    no = ? ";
 			
 		//바인딩
 		pstmt = conn.prepareStatement(query);

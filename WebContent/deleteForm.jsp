@@ -6,7 +6,6 @@
 <%
 	int no = Integer.parseInt(request.getParameter("no"));
 
-	GuestBookVo guestBookVo = new GuestBookVo(no);
 %>
 
 
@@ -21,7 +20,7 @@
 	
 	<form method="get" action="./delete.jsp">
 	비밀번호 <input type="password" name ="password"><button type="submit">확인</button>
-	<input type="hidden" type="text" name="no" value= <%= guestBookVo.getNo() %>>
+	<input type="hidden" name="no" value= "<%= no %>">
 	</form>
 	<a href="./addList.jsp">메인으로 돌아가기</a>
 </body>

@@ -7,16 +7,20 @@
 	String password = request.getParameter("password");
 	
 	
-	GuestBookVo guestBookVo = new GuestBookVo(no, password);
-	
-	
 	GuestBookDao guestBookDao = new GuestBookDao();
+	GuestBookVo guestBookVo = guestBookDao.guestBookList(no); 
 	
-	int count = guestBookDao.guestBookDelete(guestBookVo);
-	System.out.println(count);
+	System.out.println("guestBookVo.getPassword() : " + guestBookVo.getPassword());
 	
-	System.out.println(guestBookDao.guestBookDelete(guestBookVo));
-	
+	if(guestBookVo.getPassword().equals(password)) {
+		
+	guestBookDao.guestBookDelete(guestBookVo);
+	response.sendRedirect("./addList.jsp");
+	}else {
+		
 	response.sendRedirect("./addList.jsp"); 
+	}
+	
+	
 	
 %>
