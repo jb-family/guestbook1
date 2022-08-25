@@ -2,8 +2,7 @@
 <%@ page import="com.javaex.dao.GuestBookDao" %>
 <%@ page import="com.javaex.vo.GuestBookVo" %>
 <%
-
-	int no = Integer.parseInt(request.getParameter("no"));
+int no = Integer.parseInt(request.getParameter("no"));
 	String password = request.getParameter("password");
 	
 	
@@ -20,7 +19,4 @@
 		
 	response.sendRedirect("./addList.jsp"); 
 	}
-	
-	
-	
 %>
