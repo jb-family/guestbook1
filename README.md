@@ -610,11 +610,11 @@ public class FreeBoardService {
 		= #{num}
 	</update>
 	
-	<select id="freeBoardCheDelete" parameterType="int">
+	<delete id="freeBoardCheDelete" parameterType="int">
 		DELETE FROM FREEBOARD
-		WHERE NUM
-		= #{num}
-	</select>
+		WHERE NUM IN ( <foreach collection="list" item="chboxList" separator=","> #{chboxList} </foreach>
+		)
+	</delete>
 
 </mapper>
 
